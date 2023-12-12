@@ -10,7 +10,7 @@ const listRoute = require('./routes/lists');
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect("mongodb+srv://netflix:OOmPM57ngv3JLmen@netflix.wsq4rhi.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -46,7 +46,7 @@ app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}`);
