@@ -46,7 +46,8 @@ app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
-const PORT =  5000;
+const serverport = 5000;
+const PORT = serverport || 5000;
 
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}`);
